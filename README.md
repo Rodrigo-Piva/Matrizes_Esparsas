@@ -1,6 +1,6 @@
 [Descrição]
 	Este trabalho é um programa em C para criar e realizar operações em matrizes esparsas.
-	As operações incluem:
+	As operações são:
 	->Consultar e alterar valor
 	->Calcular determinante e soma de linha ou coluna
 	->Imprimir matriz

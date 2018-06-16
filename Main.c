@@ -27,7 +27,6 @@ float **matriz(unsigned long int num_lin, unsigned long int num_col){
 
 void sum_line(float ** vect,unsigned long int pos_1,unsigned long int pos_2,unsigned long int max,float coef,int mode){
 	unsigned long int i;
-
 	for(i=0;i<max;i++){
 		if(mode==1){
 			vect[pos_1][i]+=(coef*vect[pos_2][i]);
@@ -39,9 +38,9 @@ void sum_line(float ** vect,unsigned long int pos_1,unsigned long int pos_2,unsi
 
 double calc_det(float **vect,unsigned long int max){
 	unsigned long int lin,col,i;
+	int check_lin,check_col;
 	float **calc;
 	double det;
-	int check_lin,check_col;
 
 	for(lin=0;lin<max;lin++){
 		check_col=0;
@@ -112,6 +111,7 @@ double calc_det(float **vect,unsigned long int max){
 		free(calc[lin]);
 	}
 	free(calc);
+
 	return det;
 }
 
@@ -127,8 +127,10 @@ unsigned long int ask_num(char str[],unsigned long int limit, int mode){
 		}else if(mode==2){
 			printf("Min:%lu\n",limit-1);
 		}
+		
 		scanf("%lu",&num);
 		while(getchar()!='\n'){}
+		
 		if(num<limit&&mode==1){
 			i=0;
 		}else if(num>limit&&mode==-1){
@@ -218,4 +220,5 @@ int main(){
 			}
 		}
 	}
+	return 0;
 }
